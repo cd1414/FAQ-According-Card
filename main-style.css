@@ -1,0 +1,165 @@
+:root {
+  --color-Soft-violet: hsl(273, 75%, 66%);
+  --color-Soft-blue: hsl(240, 73%, 65%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body,
+html p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12xp;
+  font-weight: 400;
+}
+
+body {
+  background-image: linear-gradient(
+    var(--color-Soft-violet),
+    var(--color-Soft-blue)
+  );
+
+  display: flex;
+}
+
+.main-container {
+  width: 70%;
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+}
+
+.col-left {
+  background: url("images/bg-pattern-desktop.svg") left -550px bottom -150px
+      no-repeat,
+    url(images/illustration-woman-online-desktop.svg) left -50px top 80px repeat;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.col-left,
+.col-right {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.col-left .box {
+  margin-left: -80px;
+  margin-top: 200px;
+}
+
+.col-left .box {
+  transition: 2s;
+}
+
+.col-left .box:hover {
+  margin-top: 150px;
+  transform: scale(1.1);
+}
+
+.col-left .woman-mobile {
+  display: none;
+}
+
+.col-right{
+    padding: 30px ;
+
+}
+
+.col-right .col-content {
+  height: 90%;
+  overflow: auto;
+}
+
+.accordion .accordion-header {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.accordion-content {
+  margin-top: 20px;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease-out;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.accordion.open > .accordion-content {
+  max-height: 150px;
+}
+
+.accordion > .accordion-header {
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.accordion > .accordion-header:hover {
+  color: rgb(238, 148, 3);
+}
+
+.accordion.open > .accordion-header {
+  font-weight: 700;
+}
+
+.accordion > .accordion-header > .arrow-down {
+    float: right;
+  transition: 1.5s ease-out;
+}
+
+.accordion.open > .accordion-header > .arrow-down {
+  transform: rotateX(180deg);
+}
+
+@media (max-width: 768px) {
+    
+  .main-container {
+    height: 80%;
+    width: 80%;
+    padding-top: 30px;
+    display: flex;
+  }
+
+  .col-left {
+    background: url("images/bg-pattern-mobile.svg") left 60% top no-repeat;
+    height: 20%;
+  }
+
+  .col-left .box {
+    display: none;
+  }
+
+  .col-left .woman-mobile {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -100px;
+  }
+
+  .col-right {
+    background: none;
+    height: 80%;
+  }
+
+  .col-left,
+  .col-right {
+    width: 100%;
+  }
+}
